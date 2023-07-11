@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int getSecondLastDigit(int number) {
+    if (number < 10 && number >= 0) {
+        return -1;
+    }
+
+    int secondLastDigit = (number / 10) % 10;
+    return secondLastDigit;
+}
+
+int main() {
+    int number = 12345;
+    int secondLastDigit = getSecondLastDigit(number);
+    
+    if (secondLastDigit == -1) {
+        printf("The number %d is a positive single digit.\n", number);
+    } else {
+        printf("Second last digit of %d is: %d\n", number, secondLastDigit);
+    }
+    
+    return 0;
+}

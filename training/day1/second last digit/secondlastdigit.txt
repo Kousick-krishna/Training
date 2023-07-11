@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int getSecondLastDigit(int number) {
+    // Check if the number is a single digit
+    if ((number >= -9 && number <= -1) || (number >= 1 && number <= 9)) {
+        return -1;
+    }
+
+    // Take the absolute value of the number
+    if (number < 0) {
+        number = -number;
+    }
+
+    // Extract the second last digit
+    number = number / 10;
+    int secondLastDigit = number % 10;
+
+    return secondLastDigit;
+}
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    int secondLastDigit = getSecondLastDigit(number);
+    printf("Second last digit: %d\n", secondLastDigit);
+
+  

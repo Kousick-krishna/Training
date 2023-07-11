@@ -1,0 +1,22 @@
+public class LastDigitSum {
+    public static void main(String[] args) {
+        int number1 = 267;
+        int number2 = 154;
+
+        int lastDigitSum = calculateLastDigitSum(number1, number2);
+        System.out.println("Sum of last digits: " + lastDigitSum);
+    }
+
+    public static int calculateLastDigitSum(int num1, int num2) {
+        int lastDigit1 = getLastDigit(num1);
+        int lastDigit2 = getLastDigit(num2);
+        int sum = lastDigit1 + lastDigit2;
+        return sum;
+    }
+
+    public static int getLastDigit(int number) {
+        int absNumber = number >= 0 ? number : -number;
+        int lastDigit = absNumber % 10;
+        return lastDigit;
+    }
+}
