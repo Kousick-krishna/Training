@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <string.h>
+
+int countEvenOdd(int num1, int num2, int num3, int num4, int num5, const char* type) {
+    int count = 0;
+
+    if (strcmp(type, "even") == 0) {
+        if (num1 % 2 == 0)
+            count++;
+        if (num2 % 2 == 0)
+            count++;
+        if (num3 % 2 == 0)
+            count++;
+        if (num4 % 2 == 0)
+            count++;
+        if (num5 % 2 == 0)
+            count++;
+    } else if (strcmp(type, "odd") == 0) {
+        if (num1 % 2 != 0)
+            count++;
+        if (num2 % 2 != 0)
+            count++;
+        if (num3 % 2 != 0)
+            count++;
+        if (num4 % 2 != 0)
+            count++;
+        if (num5 % 2 != 0)
+            count++;
+    }
+
+    return count;
+}
+
+int main() {
+    int num1, num2, num3, num4, num5;
+    char type[10];
+
+    printf("Enter five numbers: ");
+    scanf("%d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
+
+    printf("Enter 'even' or 'odd': ");
+    scanf("%s", type);
+
+    int count;
+
+    if (strcmp(type, "even") == 0 || strcmp(type, "odd") == 0) {
+        count = countEvenOdd(num1, num2, num3, num4, num5, type);
+        printf("Number of %s numbers: %d\n", type, count);
+    } else {
+        printf("Invalid input for type.\n");
+    }
+
+    return 0;
+}

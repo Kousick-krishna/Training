@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int countEven(int num1, int num2, int num3, int num4, int num5) {
+    int count = 0;
+
+    if (num1 % 2 == 0)
+        count++;
+    if (num2 % 2 == 0)
+        count++;
+    if (num3 % 2 == 0)
+        count++;
+    if (num4 % 2 == 0)
+        count++;
+    if (num5 % 2 == 0)
+        count++;
+
+    return count;
+}
+
+int main() {
+    int num1, num2, num3, num4, num5;
+
+    printf("Enter five numbers: ");
+    scanf("%d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
+
+    int evenCount = countEven(num1, num2, num3, num4, num5);
+    printf("Number of even numbers: %d\n", evenCount);
+
+    return 0;
+}
