@@ -1,0 +1,39 @@
+public class NthPrimeNumber {
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false; // 0 and 1 are not prime numbers
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false; // Number is divisible by i, hence not prime
+            }
+        }
+
+        return true; // Number is prime
+    }
+
+    public static int getNthPrime(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("Invalid input. n must be a positive integer.");
+        }
+
+        int count = 0;
+        int number = 2;
+
+        while (count < n) {
+            if (isPrime(number)) {
+                count++;
+            }
+            number++;
+        }
+
+        return number - 1; // Return the nth prime number
+    }
+
+    public static void main(String[] args) {
+        int n = 10;
+        int nthPrime = getNthPrime(n);
+        System.out.println("The " + n + "th prime number is: " + nthPrime);
+    }
+}
