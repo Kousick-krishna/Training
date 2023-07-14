@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int digitSumEven(int num) {
+    int sum = 0;
+
+    while (num > 0) {
+        int digit = num % 10;
+        
+        if (digit % 2 == 0) {
+            sum += digit;
+        }
+        
+        num /= 10;
+    }
+
+    return sum;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a positive number: ");
+    scanf("%d", &num);
+
+    int sum = digitSumEven(num);
+    printf("Sum of even digits: %d\n", sum);
+
+    return 0;
+}

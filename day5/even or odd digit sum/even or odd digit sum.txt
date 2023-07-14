@@ -1,0 +1,18 @@
+class UserMainCode{
+	public int EvenOdd(int input1,String input2){
+		int sum=0;
+		nt rem =0;
+		if(input2.equals("odd")){
+			rem=1;
+		}
+		while(input1 > 0)
+		{
+			int digit = input1 % 10;
+			if(digit % 2 == rem)
+			{
+				sum+=digit;
+			}
+			input /= 10;
+		}
+		return sum;
+	}
