@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+// Function to check if it is possible to get a palindrome
+int isPossiblePalindrome(int num) {
+    int freq[10] = {0}; // Initialize frequency array with zeros
+    int digit, oddFreqCount = 0;
+
+    // Count the frequency of each digit in the number
+    while (num > 0) {
+        digit = num % 10;
+        freq[digit]++;
+        num /= 10;
+    }
+
+    // Check if there is only one odd frequency count (odd digit count)
+    for (int i = 0; i < 10; i++) {
+        if (freq[i] % 2 != 0) {
+            oddFreqCount++;
+        }
+    }
+
+    // Return 2 if it is possible to form a palindrome, else return 1
+    return (oddFreqCount <= 1) ? 2 : 1;
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    int result = isPossiblePalindrome(number);
+
+    if (result == 2) {
+        printf("It is possible to get a palindrome from the given number.\n");
+    } else {
+        printf("It is not possible to get a palindrome from the given number.\n");
+    }
+
+    return 0;
+}

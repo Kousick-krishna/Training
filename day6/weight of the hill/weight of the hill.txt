@@ -1,0 +1,7 @@
+int result=input2;
+for(int i=2;i<=input1;i++){
+	int temp=input2+input3;
+	result=result(temp*i);
+	input2=temp;
+
+}
